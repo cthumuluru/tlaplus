@@ -17,9 +17,8 @@
         amount \in 1..acc[sender];
 
       begin
-        CheckFunds:
+        CheckAndWithdraw:
           if amount <= acc[sender] then
-            Withdraw:
               acc[sender] := acc[sender] - amount;
             Deposit:
               acc[receiver] := acc[receiver] + amount;
