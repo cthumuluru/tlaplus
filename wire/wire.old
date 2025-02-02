@@ -7,7 +7,7 @@
     acc = [p \in people |-> 5],
     sender = "alice",
     receiver = "bob",
-    amount \in 1..6;
+    amount \in 1..acc[sender];
 
   define
     NoOverdrafts == \A p \in people: acc[p] >= 0
