@@ -8,6 +8,7 @@
 
     define
       NoOverdrafts == \A p \in people: acc[p] >= 0
+      EventuallyConsistent == <>[](acc["alice"] + acc["bob"] = 10)
     end define;
 
     process Wire \in 1..2
@@ -26,11 +27,12 @@
     end process;
 
   end algorithm;*)
-\* BEGIN TRANSLATION (chksum(pcal) = "c4d5e088" /\ chksum(tla) = "8c3a95ed")
+\* BEGIN TRANSLATION (chksum(pcal) = "1cf0c5b2" /\ chksum(tla) = "9b2bfebc")
 VARIABLES people, acc, pc
 
 (* define statement *)
 NoOverdrafts == \A p \in people: acc[p] >= 0
+EventuallyConsistent == <>[](acc["alice"] + acc["bob"] = 10)
 
 VARIABLES sender, receiver, amount
 
